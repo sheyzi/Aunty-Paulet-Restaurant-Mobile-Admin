@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ApRestaurant-Admin",
-    "slug": "ApRestaurant-Admin",
+    "name": "Aunty Paulet Restaurant Admin",
+    "slug": "apfoods-admin",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,12 +10,18 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+
+    "notification": {
+      "icon": "./assets/notif_icon.png",
+      "color": "#E15A11",
+      "androidMode": "default",
+      "androidCollapsedTitle": "n/a"
+    },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -23,10 +29,24 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.sheyzi_silver.apfoods",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "aunty-paulet-restaurant",
+            "project": "aunty-paulet-restaurant-admin",
+            "authToken": "9b3af7ca60394068a125fb1636bd6650fdc510995eac44cfb2e070670750a9f2"
+          }
+        }
+      ]
     }
   }
 }
